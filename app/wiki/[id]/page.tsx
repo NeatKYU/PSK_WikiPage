@@ -28,6 +28,10 @@ function WikiDetailPage() {
         router.push('/wiki/edit/' + id)
     }
 
+    const moveWikiPage = () => {
+        router.push('/')
+    }
+
     useEffect(() => {
         getPost(params.id)
     }, [])
@@ -37,6 +41,7 @@ function WikiDetailPage() {
             <span className="flex justify-between items-center">
                 <span className="text-bold text-4xl">{post?.title}</span>
                 <div className="flex gap-2">
+                    <TextButton text="목록" onClick={moveWikiPage} />
                     <TextButton text="수정" onClick={() => moveEditPage(params.id)} />
                     <TextButton text="삭제" onClick={() => deletePost(params.id)} />
                 </div>
