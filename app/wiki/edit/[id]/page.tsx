@@ -38,7 +38,7 @@ function WikiEditPage() {
 
     return (
         <div className="w-full flex flex-col gap-2">
-            <span>this is wiki edit page</span>
+            <span>wiki edit page</span>
             <div className="w-full h-10 rounded bg-slate-200 text-black flex justify-center items-center px-2">
                 <input
                     className="w-full h-full bg-transparent outline-0"

@@ -4,6 +4,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { POST } from '@/type/post'
 import { TextButton } from '@/components/button/TextButton'
+import { RenderLink } from '@/components/renderLink/RenderLink'
 
 function WikiDetailPage() {
     const params = useParams<{ id: string }>()
@@ -40,7 +41,9 @@ function WikiDetailPage() {
                     <TextButton text="삭제" onClick={() => deletePost(params.id)} />
                 </div>
             </span>
-            <span className="text-lg">{post?.content}</span>
+            <span className="text-lg">
+                <RenderLink id={post?.id} content={post?.content} />
+            </span>
         </div>
     )
 }
